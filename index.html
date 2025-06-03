@@ -181,52 +181,87 @@
             height: 400px;
             display: flex;
             flex-direction: column;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
         }
 
         .portfolio-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            text-decoration: none;
+            color: inherit;
         }
 
         .portfolio-image {
-            height: 250px;
+            height: 300px;
             background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 3rem;
-        }
-
-        .portfolio-content {
-            padding: 20px;
             flex-grow: 1;
-            display: flex;
-            flex-direction: column;
         }
 
         .portfolio-title {
-            font-size: 1.3rem;
+            padding: 20px;
+            font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: 10px;
             color: var(--primary-color);
+            text-align: center;
+            background: white;
         }
 
-        .portfolio-description {
-            color: var(--text-light);
-            flex-grow: 1;
+        /* Modal Styles */
+        .modal-xl {
+            max-width: 90%;
         }
 
-        .portfolio-link {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 500;
-            margin-top: 10px;
-            display: inline-block;
+        .modal-body {
+            padding: 20px;
         }
 
-        .portfolio-link:hover {
-            color: var(--accent-color);
+        .modal-content {
+            border: none;
+            border-radius: 10px;
+        }
+
+        .modal-header {
+            background: var(--primary-color);
+            color: white;
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+        }
+
+        .btn-close {
+            filter: invert(1);
+        }
+
+        .image-placeholder {
+            height: 400px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 2px dashed #dee2e6;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
 
         /* Contact Section */
@@ -300,7 +335,16 @@
             }
             
             .portfolio-image {
-                height: 200px;
+                height: 250px;
+            }
+
+            .modal-xl {
+                max-width: 95%;
+            }
+
+            .modal-image,
+            .image-placeholder {
+                height: 300px;
             }
         }
 
@@ -317,10 +361,6 @@
 
         .portfolio-item:nth-child(1) { animation-delay: 0.1s; }
         .portfolio-item:nth-child(2) { animation-delay: 0.2s; }
-        .portfolio-item:nth-child(3) { animation-delay: 0.3s; }
-        .portfolio-item:nth-child(4) { animation-delay: 0.4s; }
-        .portfolio-item:nth-child(5) { animation-delay: 0.5s; }
-        .portfolio-item:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
@@ -357,7 +397,7 @@
                 <div class="col-lg-8">
                     <div class="hero-content">
                         <h1 class="serif-font">Lily Wolfson</h1>
-                        <p class="lead">Journalist • Writer • Visual Storyteller</p>
+                        <p class="lead">Visual Storyteller</p>
                         <div class="hero-buttons">
                             <a href="#portfolio" class="btn-custom">View My Work</a>
                             <a href="#contact" class="btn-custom">Get In Touch</a>
@@ -379,7 +419,7 @@
                         
                         <p>Her work combines traditional journalistic rigor with innovative digital storytelling techniques, creating compelling narratives that resonate with diverse audiences. From breaking news coverage to in-depth feature stories, Lily approaches each assignment with curiosity, empathy, and a commitment to truth.</p>
                         
-                        <p>As she prepares to enter the professional journalism landscape, Lily is excited to continue exploring the evolving ways we can tell important stories in our digital age.</p>
+                        <p>As she prepares to enter investment banking, she will continue to hone her photojournalism skills in her free time.</p>
                     </div>
                 </div>
             </div>
@@ -390,65 +430,129 @@
     <section id="portfolio" class="section">
         <div class="container">
             <h2 class="section-title serif-font">My Work</h2>
-            <div class="row">
-                <!-- Writing Clips -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <i class="fas fa-pen-fancy"></i>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3 class="portfolio-title">Lucy Portraits</h3>
-                            <p class="portfolio-description">An in-depth look at campus sustainability initiatives and their real-world impact on student life and university policy.</p>
-                            <a href="#" class="portfolio-link">Read Article <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3 class="portfolio-title">Noelle at the Animal Shelter</h3>
-                            <p class="portfolio-description">Real-time reporting on local elections with live updates and community impact analysis.</p>
-                            <a href="#" class="portfolio-link">Read Article <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <i class="fas fa-quote-left"></i>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3 class="portfolio-title">Soul & Smoke</h3>
-                            <p class="portfolio-description">A compelling portrait of a local entrepreneur who's revolutionizing sustainable business practices in the community.</p>
-                            <a href="#" class="portfolio-link">Read Article <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Photography -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-item">
+            <div class="row justify-content-center">
+                <!-- Lucy Portraits -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#lucyModal">
                         <div class="portfolio-image">
                             <i class="fas fa-camera"></i>
                         </div>
-                        <div class="portfolio-content">
-                            <h3 class="portfolio-title">Decisive Moments</h3>
-                            <p class="portfolio-description">A visual journey documenting the changing seasons on Northwestern's campus and how students adapt their routines.</p>
-                            <a href="#" class="portfolio-link">View Gallery <i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <div class="portfolio-title">Lucy Portraits</div>
                     </div>
                 </div>
 
+                <!-- Noelle at the Animal Shelter -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#noelleModal">
+                        <div class="portfolio-image">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="portfolio-title">Noelle at the Animal Shelter</div>
+                    </div>
+                </div>
 
+                <!-- Spring in Evanston -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#springModal">
+                        <div class="portfolio-image">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="portfolio-title">Spring in Evanston</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Lucy Portraits Modal -->
+    <div class="modal fade" id="lucyModal" tabindex="-1" aria-labelledby="lucyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="lucyModalLabel">Lucy Portraits</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                                <img src="Portrait_1.jpg" class="modal-image" alt="Portrait 1">     
+                        </div>
+                        <div class="col-md-6">
+                                <img src="Portrait_2.jpg" class="modal-image" alt="Portrait 2">                    
+
+                        </div>
+                        <div class="col-md-6">
+                                <img src="Portrait_3.jpg" class="modal-image" alt="Portrait 3">     
+
+                        </div>
+                        <div class="col-md-6">
+                                <img src="Portrait_4.jpg" class="modal-image" alt="Portrait 4">                             
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Noelle at the Animal Shelter Modal -->
+    <div class="modal fade" id="noelleModal" tabindex="-1" aria-labelledby="noelleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="noelleModalLabel">Noelle at the Animal Shelter</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                                <img src="Noelle_1.JPEG" class="modal-image" alt="Noelle 1">     
+                        </div>
+                        <div class="col-md-6">
+                                <img src="Noelle_2.JPEG" class="modal-image" alt="Noelle 2">                    
+
+                        </div>
+                        <div class="col-md-6">
+                                <img src="Noelle_3.JPG" class="modal-image" alt="Noelle 3">     
+
+                        </div>
+                        <div class="col-md-6">
+                                <img src="Noelle_4.jpeg" class="modal-image" alt="Noelle 4">                             
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Spring Modal -->
+    <div class="modal fade" id="springModal" tabindex="-1" aria-labelledby="springModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="springModalLabel">Spring in Evanston</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                                <img src="Spring_1.JPG" class="modal-image" alt="Spring 1">     
+                        </div>
+                        <div class="col-md-6">
+                                <img src="Spring_2.JPEG" class="modal-image" alt="Spring 2">                    
+
+                        </div>
+                        </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                                <img src="Spring_3.JPEG" class="modal-image" alt="Spring 3">     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
